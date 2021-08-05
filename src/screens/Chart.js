@@ -1,5 +1,11 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, View, SafeAreaView, Image, StatusBar} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+} from 'react-native';
 
 // where local file imported
 import {
@@ -8,6 +14,7 @@ import {
   SectionTitle,
   InfoBox,
   HorizontalBox,
+  AreaChart,
 } from '../components';
 import {color, dimens} from '../utils';
 
@@ -20,7 +27,7 @@ const Chart = ({navigation}) => {
         barStyle="dark-content"
         backgroundColor={color.white}
       />
-      <View style={styles.wrapper}>
+      <ScrollView style={styles.wrapper}>
         <SectionTitle
           title="Goal Overview"
           subtitle={`Adding this goal will increase your total\nmonthly deposit target`}
@@ -33,8 +40,9 @@ const Chart = ({navigation}) => {
           />
           <InfoBox label={`Total\nMonthly Deposit`} amount="2250" type="new" />
         </View>
+        <AreaChart />
         <HorizontalBox label="General Savings" amount="500" />
-      </View>
+      </ScrollView>
       <View style={styles.footer}>
         <Button title="Create Goal" />
       </View>
@@ -55,6 +63,7 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
+    marginTop: dimens.small,
     marginBottom: dimens.default,
     borderRadius: dimens.default_12,
     overflow: 'hidden',
