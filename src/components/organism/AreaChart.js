@@ -8,7 +8,7 @@ import * as shape from 'd3-shape';
 import {color, dimens, formatCurrency} from '../../utils';
 
 const LineChart = ({}) => {
-  const data = [0, 20000, 90000, 200000];
+  const data = [2000, 20000, 90000, 200000];
 
   const CustomGrid = ({y, ticks}) => (
     <G>
@@ -38,8 +38,7 @@ const LineChart = ({}) => {
           fill: color.grey,
           fontSize: dimens.small,
         }}
-        numberOfTicks={6}
-        min={0}
+        numberOfTicks={3}
         formatLabel={value => `  ${value / 1000}K  `}
       />
       <View style={styles.wrapper}>
