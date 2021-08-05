@@ -6,19 +6,14 @@ import {color, dimens} from '../../utils';
 const SectionTitle = ({
   title,
   subtitle,
-  textColor,
   titleStyle,
   subTitleStyle,
   containerStyle,
 }) => {
   return (
     <View style={[styles.container, containerStyle]}>
-      <Text style={[styles.title, {color: textColor}, titleStyle]}>
-        {title}
-      </Text>
-      <Text style={[styles.subtitle, {color: textColor}, subTitleStyle]}>
-        {subtitle}
-      </Text>
+      <Text style={[styles.title, titleStyle]}>{title}</Text>
+      <Text style={[styles.subtitle, subTitleStyle]}>{subtitle}</Text>
     </View>
   );
 };
@@ -35,7 +30,6 @@ SectionTitle.propTypes = {
 SectionTitle.defaultProps = {
   title: 'Title',
   subtitle: 'Subtitle',
-  textColor: color.btn_black,
   titleStyle: {},
   subTitleStyle: {},
   containerStyle: {},
@@ -49,12 +43,15 @@ const styles = StyleSheet.create({
     paddingVertical: dimens.default_16,
   },
   title: {
-    fontSize: dimens.default_22,
+    fontSize: dimens.large,
+    fontWeight: 'bold',
     color: color.btn_black,
+    marginBottom: dimens.medium,
   },
   subtitle: {
     fontSize: dimens.default_16,
+    fontWeight: 'bold',
     lineHeight: dimens.medium,
-    color: color.btn_black,
+    color: color.grey,
   },
 });

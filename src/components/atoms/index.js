@@ -2,5 +2,6 @@
 // so will be more easy to call any components from any folder on the /components/* folder
 import Button from './Button';
 import InfoLabel from './InfoLabel';
+import BackButton from './BackButton';
 
-export {InfoLabel, Button};
+export {InfoLabel, Button, BackButton};
